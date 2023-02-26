@@ -14,5 +14,29 @@ namespace VendorOrder.Controllers
       List<Vendor> allVendors = Vendor.GetAll();
       return View(allVendors);
     }
+
+        [HttpGet("/vendors/new")]
+    public ActionResult New()
+    {
+      return View();
+    }
+
+    [HttpPost("/vendors")]
+    public ActionResult Create(string vendorName)
+    {
+      Vendor newCategory = new Vendor(vendorName);
+      return RedirectToAction("Index");
+    }
+
+    [HttpGet("/vendors/{id}")]
+    public ActionResult Show(int id)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor selectedCategory = Vendor.Find(id);
+      List<Order> categoryItems = selectedCategory.Orders;
+      model.Add("category", selectedCategory);
+      model.Add("orders", categoryItems);
+      return View(model);
+    }
   }
 }
