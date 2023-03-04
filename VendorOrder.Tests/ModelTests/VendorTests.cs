@@ -29,5 +29,18 @@ namespace VendorOrder.Tests
       Assert.AreEqual(1, result);
     }
 
+    [TestMethod]
+    public void GetAll_ReturnsAllVendorObjets_VendorList()
+    {
+      string name1 = "Monk's";
+      string name2 = "Tom's";
+      Vendor newVendor1 = new Vendor(name1);
+      Vendor newVendor2 = new Vendor(name2);
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
+      List<Vendor> result = Vendor.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+
+    }
+
   }
 }
