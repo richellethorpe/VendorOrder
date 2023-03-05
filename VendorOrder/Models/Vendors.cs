@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 
-
-namespace OrderTracker.Models
+namespace VendorOrder.Models
 {
   public class Vendor
   {
@@ -10,7 +9,7 @@ namespace OrderTracker.Models
     public int Id { get; }
     public List<Order> Orders { get; set; }
 
-    public Vendor ( string vendorName)
+    public Vendor(string vendorName)
     {
       Name = vendorName;
       _instances.Add(this);
@@ -18,7 +17,7 @@ namespace OrderTracker.Models
       Orders = new List<Order>{};
     }
 
-        public static void ClearAll()
+    public static void ClearAll()
     {
       _instances.Clear();
     }

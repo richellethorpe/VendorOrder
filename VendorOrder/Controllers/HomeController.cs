@@ -1,16 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
-using OrderTracker.Models;
 
 namespace VendorOrder.Controllers
 {
-  public class HomeController : Controller
-  {
-
-    [Route("/")]
-    public ActionResult Index()
+    public class HomeController : Controller
     {
-      return View();
-    }
 
-  }
+      [HttpGet("/")]
+      public ActionResult Index()
+      {
+        return View();
+      }
+
+    }
 }
