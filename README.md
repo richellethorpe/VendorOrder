@@ -13,7 +13,7 @@
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+This is an organizational application that lets the user save vendors and then add orders to those vendors. This allows the user to click on a specific vendor and see all orders associated with that vendor, as well as any specific information related to that order. 
 
 ## Setup/Installation Requirements
 
