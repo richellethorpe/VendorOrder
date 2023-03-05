@@ -14,7 +14,7 @@ namespace VendorOrder.Controllers
       return View(vendor);
     }
 
-    [HttpGet("/categories/{vendorId}/orders/{orderId}")]
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
     public ActionResult Show(int vendorId, int orderId)
     {
       Order order = Order.Find(orderId);
@@ -24,5 +24,7 @@ namespace VendorOrder.Controllers
       model.Add("vendor", vendor);
       return View(model);
     }
+
+
   }
 }
