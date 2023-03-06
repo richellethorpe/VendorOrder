@@ -83,11 +83,12 @@ namespace VendorOrder.Tests
     }
 
     [TestMethod]
-    public void AddItem_AssociatesItemWithCategory_ItemList()
+    public void AddOrder_AssociatesOrderWithCategory_OrderList()
     {
       //Arrange
       string description = "Walk the dog.";
-      Order newOrder = new Order(description);
+      int price1 = 4;
+      Order newOrder = new Order(description, price1);
       List<Order> newList = new List<Order> { newOrder };
       string name = "Work";
       Vendor newVendor = new Vendor(name);

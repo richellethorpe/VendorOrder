@@ -17,7 +17,7 @@ namespace ToDoList.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test");
+      Order newOrder = new Order("test", 2);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -26,9 +26,10 @@ namespace ToDoList.Tests
     {
       //Arrange
       string description = "Walk the dog.";
+      int price1 = 4;
 
       //Act
-      Order newOrder = new Order(description);
+      Order newOrder = new Order(description, price1);
       string result = newOrder.Description;
 
       //Assert
@@ -40,7 +41,8 @@ namespace ToDoList.Tests
     {
       //Arrange
       string description = "Walk the dog.";
-      Order newOrder = new Order(description);
+      int price1 = 4;
+      Order newOrder = new Order(description, price1);
 
       //Act
       string updatedDescription = "Do the dishes";
@@ -70,8 +72,10 @@ namespace ToDoList.Tests
       //Arrange
       string description01 = "Walk the dog";
       string description02 = "Wash the dishes";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
+      int price1 = 4;
+      int price2 = 6;
+      Order newOrder1 = new Order(description01, price1);
+      Order newOrder2 = new Order(description02, price2);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
       //Act
